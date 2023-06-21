@@ -1,11 +1,10 @@
+import {Quiz} from "./features";
 
 function App() {
 
-  return (
-    <div >
-        <h1>React App</h1>
-    </div>
-  );
+    return (
+        <Quiz/>
+    );
 }
 
 export default App;
