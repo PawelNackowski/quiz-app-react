@@ -1,37 +1,37 @@
-import { useState } from 'react'
-import { Answers, Header, Wrapper } from './styled'
-import { questions } from '../../features/answers'
-import { Pagination } from './Pagination'
+import { useState } from 'react';
+import { Answers, Header, Wrapper } from './styled';
+import { questions } from '../../features/answers';
+import { Pagination } from './Pagination';
 
 export const Tile = ({ title }) => {
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-    const [selectedAnswer, setSelectedAnswer] = useState(null)
-    const [correctAnswersCount, setCorrectAnswersCount] = useState(0) // Dodana zmienna do przechowywania liczby poprawnych odpowiedzi
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
 
     const handleAnswerChange = (event) => {
-        setSelectedAnswer(event.target.value)
-    }
+        setSelectedAnswer(event.target.value);
+    };
 
     const checkAnswer = (answer) => {
-        return answer === questions[currentQuestionIndex].correctAnswer ? 1 : 0
-    }
+        return answer === questions[currentQuestionIndex].correctAnswer ? 1 : 0;
+    };
 
     const handleSend = () => {
-        const answerResult = checkAnswer(selectedAnswer)
-        console.log('Selected Answer:', answerResult)
+        const answerResult = checkAnswer(selectedAnswer);
+        console.log('Selected Answer:', answerResult);
 
         if (answerResult === 1) {
-            setCorrectAnswersCount((prevCount) => prevCount + 1)
+            setCorrectAnswersCount((prevCount) => prevCount + 1);
         }
-    }
+    };
 
-    const isSendDisabled = selectedAnswer === null
+    const isSendDisabled = selectedAnswer === null;
 
     const {
         id,
         title: currentQuestionTitle,
         answers,
-    } = questions[currentQuestionIndex]
+    } = questions[currentQuestionIndex];
 
     return (
         <Wrapper>
@@ -70,5 +70,5 @@ export const Tile = ({ title }) => {
                 handleSend={handleSend}
             />
         </Wrapper>
-    )
-}
+    );
+};
