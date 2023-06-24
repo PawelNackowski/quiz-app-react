@@ -1,4 +1,4 @@
-import { questions } from '../../../features/answers'
+import { questions } from '../../../features/answers';
 
 export const Pagination = ({
     setCurrentQuestionIndex,
@@ -9,10 +9,10 @@ export const Pagination = ({
     handleSend,
 }) => {
     const handleNextQuestion = () => {
-        setCurrentQuestionIndex((prevIndex) => prevIndex + 1)
-        setSelectedAnswer(null)
-        handleSend()
-    }
+        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+        setSelectedAnswer(null);
+        handleSend();
+    };
 
     return (
         <>
@@ -33,5 +33,5 @@ export const Pagination = ({
                 {currentQuestionIndex + 1}
             </div>
         </>
-    )
-}
+    );
+};
