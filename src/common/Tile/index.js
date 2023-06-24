@@ -6,27 +6,32 @@ import { Pagination } from './Pagination'
 export const Tile = ({ title }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
     const [selectedAnswer, setSelectedAnswer] = useState(null)
+    const [correctAnswersCount, setCorrectAnswersCount] = useState(0) // Dodana zmienna do przechowywania liczby poprawnych odpowiedzi
 
     const handleAnswerChange = (event) => {
         setSelectedAnswer(event.target.value)
     }
 
     const checkAnswer = (answer) => {
-        return answer === questions[currentQuestionIndex].correctAnswer
-            ? '1'
-            : '0'
+        return answer === questions[currentQuestionIndex].correctAnswer ? 1 : 0
     }
+
     const handleSend = () => {
-        console.log('Selected Answer:', checkAnswer(selectedAnswer))
+        const answerResult = checkAnswer(selectedAnswer)
+        console.log('Selected Answer:', answerResult)
+
+        if (answerResult === 1) {
+            setCorrectAnswersCount((prevCount) => prevCount + 1)
+        }
     }
+
+    const isSendDisabled = selectedAnswer === null
 
     const {
         id,
         title: currentQuestionTitle,
         answers,
     } = questions[currentQuestionIndex]
-
-    const isSendDisabled = selectedAnswer === null
 
     return (
         <Wrapper>
@@ -61,6 +66,8 @@ export const Tile = ({ title }) => {
                 currentQuestionIndex={currentQuestionIndex}
                 isSendDisabled={isSendDisabled}
                 totalQuestions={questions.length}
+                correctAnswersCount={correctAnswersCount}
+                handleSend={handleSend}
             />
         </Wrapper>
     )
