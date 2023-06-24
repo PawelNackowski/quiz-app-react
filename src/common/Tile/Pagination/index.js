@@ -5,25 +5,17 @@ export const Pagination = ({
     setSelectedAnswer,
     currentQuestionIndex,
     isSendDisabled,
+    correctAnswersCount,
+    handleSend,
 }) => {
     const handleNextQuestion = () => {
         setCurrentQuestionIndex((prevIndex) => prevIndex + 1)
         setSelectedAnswer(null)
-    }
-
-    const handlePreviousQuestion = () => {
-        setCurrentQuestionIndex((prevIndex) => prevIndex - 1)
-        setSelectedAnswer(null)
+        handleSend()
     }
 
     return (
         <>
-            <button
-                onClick={handlePreviousQuestion}
-                disabled={currentQuestionIndex === 0}
-            >
-                Back
-            </button>
             <span>
                 {currentQuestionIndex + 1}/{questions.length}
             </span>
@@ -36,6 +28,10 @@ export const Pagination = ({
             >
                 Next
             </button>
+            <div>
+                Correct Answers: {correctAnswersCount}/
+                {currentQuestionIndex + 1}
+            </div>
         </>
     )
 }
