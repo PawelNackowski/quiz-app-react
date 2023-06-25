@@ -68,6 +68,7 @@ export const Tile = ({ title }) => {
                 totalQuestions={questions.length}
                 correctAnswersCount={correctAnswersCount}
                 handleSend={handleSend}
+                questionId={id}
             />
         </Wrapper>
     );
