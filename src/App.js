@@ -1,24 +1,14 @@
-import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Quiz } from './features';
-import { toQuestion, toQuiz } from './routes';
-import { StyledLink } from './features/styled';
+import { PageStart } from './features/PageStart';
 
 function App() {
     return (
-        <HashRouter>
-            <Switch>
-                <Route path={toQuiz()}>
-                    <div>Hello !</div>
-                    <StyledLink to="/question">start</StyledLink>
-                </Route>
-                <Route path={toQuestion()}>
-                    <Quiz />
-                </Route>
-                <Route>
-                    <Redirect to={toQuiz()} />
-                </Route>
-            </Switch>
-        </HashRouter>
+        <Routes>
+            <Route path="/" element={<Navigate to="/start" />} />
+            <Route path="/start" element={<PageStart />} />
+            <Route path="/question" element={<Quiz />} />
+        </Routes>
     );
 }
 
