@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { questions } from '../../../features/answers';
 
 export const Pagination = ({
@@ -5,25 +7,67 @@ export const Pagination = ({
     setSelectedAnswer,
     currentQuestionIndex,
     isSendDisabled,
+    totalQuestions,
     correctAnswersCount,
     handleSend,
 }) => {
+    const navigate = useNavigate();
+    const { questionId } = useParams();
+    const [currentQuestionId, setCurrentQuestionId] = useState(null);
+
+    useEffect(() => {
+        const question = questions.find((question) => question.id === parseInt(questionId));
+        if (question) {
+            setCurrentQuestionId(question.id);
+            setCurrentQuestionIndex(question.id - 1);
+        } else {
+            navigate(`/question/${questions[0].id}`);
+        }
+    }, [questionId, setCurrentQuestionIndex, navigate]);
+
     const handleNextQuestion = () => {
-        setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+        const nextQuestionIndex = currentQuestionIndex + 1;
         setSelectedAnswer(null);
         handleSend();
+
+        if (nextQuestionIndex < totalQuestions) {
+            const nextQuestion = questions[nextQuestionIndex];
+            const nextUrl = `/question/${nextQuestion.id}`;
+            navigate(nextUrl);
+            setCurrentQuestionId(nextQuestion.id);
+            setCurrentQuestionIndex(nextQuestionIndex);
+        }
+    };
+
+    const handleBackQuestion = () => {
+        const previousQuestionIndex = currentQuestionIndex - 1;
+        setSelectedAnswer(null);
+
+        if (previousQuestionIndex >= 0) {
+            const previousQuestion = questions[previousQuestionIndex];
+            const previousUrl = `/question/${previousQuestion.id}`;
+            navigate(previousUrl);
+            setCurrentQuestionId(previousQuestion.id);
+            setCurrentQuestionIndex(previousQuestionIndex);
+        }
     };
 
     return (
         <>
+            <button
+                onClick={handleBackQuestion}
+                disabled={currentQuestionIndex <= 0}
+            >
+                Back
+            </button>
             <span>
-                {currentQuestionIndex + 1}/{questions.length}
+                {currentQuestionIndex + 1}/{totalQuestions}
             </span>
             <button
                 onClick={handleNextQuestion}
                 disabled={
                     isSendDisabled ||
-                    currentQuestionIndex === questions.length - 1
+                    currentQuestionIndex === totalQuestions - 1
                 }
             >
                 Next

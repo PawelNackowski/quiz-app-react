@@ -1,9 +1,14 @@
-import {Quiz} from "./features";
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { Quiz } from './features';
+import { PageStart } from './features/PageStart';
 
 function App() {
-
     return (
-        <Quiz/>
+        <Routes>
+            <Route path="/" element={<Navigate to="/start" />} />
+            <Route path="/start" element={<PageStart />} />
+            <Route path="/question/:questionId" element={<Quiz />} />
+        </Routes>
     );
 }
 
