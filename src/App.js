@@ -7,7 +7,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Navigate to="/start" />} />
             <Route path="/start" element={<PageStart />} />
-            <Route path="/question" element={<Quiz />} />
+            <Route path="/question/:questionId" element={<Quiz />} />
         </Routes>
     );
 }
