@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { questions } from '../../features/answers';
+import { questions } from '../questions';
 import { Pagination } from './Pagination';
 
 export const PageQuestions = () => {

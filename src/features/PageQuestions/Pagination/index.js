@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { questions } from '../../../features/answers';
+import { questions } from '../../questions';
 
 export const Pagination = ({
     setCurrentQuestionIndex,
@@ -16,7 +16,9 @@ export const Pagination = ({
     const [currentQuestionId, setCurrentQuestionId] = useState(null);
 
     useEffect(() => {
-        const question = questions.find((question) => question.id === parseInt(questionId));
+        const question = questions.find(
+            (question) => question.id === parseInt(questionId)
+        );
         if (question) {
             setCurrentQuestionId(question.id);
             setCurrentQuestionIndex(question.id - 1);
