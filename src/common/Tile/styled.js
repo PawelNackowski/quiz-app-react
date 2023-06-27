@@ -12,11 +12,9 @@ export const Header = styled.h1`
   text-align: center;
 `;
 
-export const Answers = styled.div`
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 10px;
+export const Content = styled.div`
+
     input {
-      accent-color: green;
+      accent-color: red;
     }
 `;
