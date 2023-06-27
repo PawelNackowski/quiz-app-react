@@ -80,4 +80,31 @@ export const questions = [
     ],
     correctAnswer: 'Paris',
   },
+  {
+    id: 4,
+    title: '4. What is the capital of Spain?',
+    answers: [
+      {
+        id: 1,
+        name: 'Madrid',
+        value: 'Madrid',
+      }, 
+      {
+        id: 2,
+        name: 'Barcelona',
+        value: 'Barcelona',
+      },
+      {
+        id: 3,
+        name: 'Valencia',
+        value: 'Valencia',
+      },
+      {
+        id: 4,
+        name: 'Seville',
+        value: 'Seville',
+      },
+    ],
+    correctAnswer: 'Madrid',
+  },
 ]
