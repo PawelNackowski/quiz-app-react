@@ -52,7 +52,13 @@ export const PageQuestions = () => {
                         </li>
                     ))}
                 </ul>
-                <button onClick={handleSend} disabled={isSendDisabled}>
+                <button
+                    onClick={handleSend}
+                    disabled={
+                        isSendDisabled ||
+                        currentQuestionIndex !== questions.length - 1
+                    }
+                >
                     Send
                 </button>
             </div>
