@@ -9,7 +9,6 @@ function App() {
             <Route path="/" element={<Navigate to="/start" />} />
             <Route path="/start" element={<PageStart />} />
             <Route path="/question/:questionId" element={<Quiz />} />
-            <Route path="/end" element={<PageEnd/>}/>
         </Routes>
     );
 }
