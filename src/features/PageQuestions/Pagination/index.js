@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { questions } from '../../questions';
+import { Button, Wrapper } from './styled';
 
 export const Pagination = ({
     setCurrentQuestionIndex,
@@ -56,28 +57,30 @@ export const Pagination = ({
 
     return (
         <>
-            <button
-                onClick={handleBackQuestion}
-                disabled={currentQuestionIndex <= 0}
-            >
-                Back
-            </button>
-            <span>
-                {currentQuestionIndex + 1}/{totalQuestions}
-            </span>
-            <button
-                onClick={handleNextQuestion}
-                disabled={
-                    isSendDisabled ||
-                    currentQuestionIndex === totalQuestions - 1
-                }
-            >
-                Next
-            </button>
-            <div>
-                Correct Answers: {correctAnswersCount}/
-                {currentQuestionIndex + 1}
-            </div>
+            <Wrapper>
+                <button
+                    onClick={handleBackQuestion}
+                    disabled={currentQuestionIndex <= 0}
+                >
+                    Back
+                </button>
+                <span>
+                    {currentQuestionIndex + 1}/{totalQuestions}
+                </span>
+                <Button
+                    onClick={handleNextQuestion}
+                    disabled={
+                        isSendDisabled ||
+                        currentQuestionIndex === totalQuestions - 1
+                    }
+                >
+                    Next
+                </Button>
+                <div>
+                    Correct Answers: {correctAnswersCount}/
+                    {currentQuestionIndex + 1}
+                </div>
+            </Wrapper>
         </>
     );
 };
