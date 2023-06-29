@@ -7,10 +7,17 @@ export const PageStart = () => {
             <Position>
                 <Tile
                     title={'Quiz App'}
+                    extraContent={
+                        <>
+                        hello to quiz
+                        </>
+                    }
                     content={
-                        <StyledLink to="/question/:questionId">
-                            start
-                        </StyledLink>
+                        <>
+                            <StyledLink to="/question/:questionId">
+                                start
+                            </StyledLink>
+                        </>
                     }
                 ></Tile>
             </Position>
