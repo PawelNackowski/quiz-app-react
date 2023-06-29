@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import App from "./App";
 import { HashRouter } from 'react-router-dom';
+import { GlobalStyle } from './GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+import {theme}  from "./theme"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <>
         <HashRouter>
-            <App />
+            <ThemeProvider theme={theme}>
+                <GlobalStyle />
+                <App />
+            </ThemeProvider>
         </HashRouter>
     </>
 );
