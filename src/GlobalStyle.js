@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
-    font-family: 'Belanosima', sans-serif;
+    font-family: 'Alkatra', sans-serif;
   }
 
   *::before, ::after {
