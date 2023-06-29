@@ -34,3 +34,7 @@ export const Content = styled.div`
         accent-color: #181269;
     }
 `;
+
+export const ExtraContent = styled.div`
+margin: 0 30px 0 30px;
+`
