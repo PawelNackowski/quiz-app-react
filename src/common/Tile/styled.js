@@ -1,20 +1,36 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(41, 41, 41);
+    background: radial-gradient(
+        circle,
+        rgba(41, 41, 41, 1) 0%,
+        rgba(72, 72, 72, 1) 0%,
+        rgba(41, 41, 41, 1) 100%
+    );
+    border: 2px solid #178868;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 0px 100px 60px rgba(46, 255, 213, 0.25);
+    -moz-box-shadow: 0px 0px 100px 60px rgba(46, 255, 213, 0.25);
+    box-shadow: 0px 0px 100px 60px rgba(46, 255, 213, 0.25);
+    margin: 10px;
     padding: 20px;
-    width: 500px; 
+    width: 500px;
     height: 500px;
 `;
 export const Header = styled.h1`
-  text-align: center;
+    text-align: center;
+    letter-spacing: 2px;
 `;
 
 export const Content = styled.div`
+    display: grid;
+    grid-template-rows: 1fr auto;
 
     input {
-      accent-color: red;
+        accent-color: #181269;
     }
 `;
