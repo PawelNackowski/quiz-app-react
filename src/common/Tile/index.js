@@ -1,10 +1,10 @@
-import { Content, Header, Wrapper } from './styled';
+import { Content, ExtraContent, Header, Wrapper } from './styled';
 
 export const Tile = ({ title, content, extraContent }) => {
     return (
         <Wrapper>
             <Header>{title}</Header>
-            <div>{extraContent}</div>
+            <ExtraContent>{extraContent}</ExtraContent>
             <Content>{content}</Content>
         </Wrapper>
     );
