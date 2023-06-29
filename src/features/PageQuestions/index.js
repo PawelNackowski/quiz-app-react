@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { questions } from '../questions';
 import { Pagination } from './Pagination';
 import { PageEnd } from '../PageEnd';
+import { Wrapper } from './styled';
 
 export const PageQuestions = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -42,6 +43,7 @@ export const PageQuestions = () => {
 
     return (
         <>
+        <Wrapper>
             {!showResult ? (
                 <>
                     <div key={id}>
@@ -91,6 +93,7 @@ export const PageQuestions = () => {
                     />
                 </div>
             )}
+            </Wrapper>
         </>
     );
 };
