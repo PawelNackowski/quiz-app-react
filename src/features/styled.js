@@ -19,7 +19,7 @@ export const StyledLink = styled(Link)`
     padding: 10px 30px;
     border: solid #2bd1bb 3px;
     border-radius: 50px;
-    transition: 1000ms;
+    transition: 0.5s;
     transform: translateY(0);
     display: flex;
     flex-direction: row;
@@ -27,7 +27,6 @@ export const StyledLink = styled(Link)`
     cursor: pointer;
 
     &:hover {
-        transition: 1000ms;
         padding: 10px 56px;
         transform: translateY(-0px);
         color: #0066cc;
