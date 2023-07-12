@@ -1,8 +1,14 @@
+import { StyledLink } from "../styled";
+import { Wrapper } from "./styled";
 
 export const PageEnd = ({ correctAnswersCount, currentQuestionIndex }) => {
     return (
+      <Wrapper>
+        Correct answers:
         <div>
-            Correct answers: {correctAnswersCount} of {currentQuestionIndex + 1}
+          {correctAnswersCount} of {currentQuestionIndex + 1}
         </div>
+        <StyledLink to="/start">Go to home</StyledLink>
+      </Wrapper>
     );
 };
