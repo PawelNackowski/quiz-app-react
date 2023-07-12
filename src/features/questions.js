@@ -1,7 +1,7 @@
 export const questions = [
     {
         id: 1,
-        title: '1. Jaki jest największy park narodowy w Polsce?',
+        title: 'Jaki jest największy park narodowy w Polsce?',
         answers: [
             {
                 id: 1,
@@ -28,7 +28,7 @@ export const questions = [
     },
     {
         id: 2,
-        title: '2.Gdzie znajduje się największy zamek w Polsce pod względem powierzchni?',
+        title: 'Gdzie znajduje się największy zamek w Polsce pod względem powierzchni?',
         answers: [
             {
                 id: 1,
@@ -55,7 +55,7 @@ export const questions = [
     },
     {
         id: 3,
-        title: '3. Które miasto w Polsce jest uznawane za stolicę kultury i nauki?',
+        title: 'Które miasto w Polsce jest uznawane za stolicę kultury i nauki?',
         answers: [
             {
                 id: 1,
@@ -82,7 +82,7 @@ export const questions = [
     },
     {
         id: 4,
-        title: '4.Jakie jest najgłębsze naturalne jezioro w Polsce?',
+        title: 'Jakie jest najgłębsze naturalne jezioro w Polsce?',
         answers: [
             {
                 id: 1,
@@ -136,7 +136,7 @@ export const questions = [
     },
     {
         id: 6,
-        title: '6. Które z wymienionych miast jest najstarsze?',
+        title: 'Które z wymienionych miast jest najstarsze?',
         answers: [
             {
                 id: 1,
