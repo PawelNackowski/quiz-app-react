@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     background: rgb(41, 41, 41);
     background: radial-gradient(
         circle,
@@ -22,19 +21,23 @@ export const Wrapper = styled.div`
     height: 500px;
 `;
 export const Header = styled.h1`
-    text-align: center;
+    align-self: center;
     letter-spacing: 2px;
+    margin-bottom: 6px;
 `;
 
 export const Content = styled.div`
-    display: grid;
-    grid-template-rows: 1fr auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    input {
-        accent-color: #181269;
-    }
+  input {
+    margin-right: 10px;
+    accent-color: #181269;
+  }
 `;
 
 export const ExtraContent = styled.div`
 margin: 0 30px 0 30px;
-`
+`;
