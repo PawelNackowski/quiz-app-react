@@ -17,13 +17,13 @@ export const Wrapper = styled.div`
     box-shadow: 0px 0px 100px 60px rgba(46, 255, 213, 0.25);
     margin: 10px;
     padding: 20px;
-    width: 500px;
+    min-width: 300px;
     height: 500px;
 `;
 export const Header = styled.h1`
     align-self: center;
     letter-spacing: 2px;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 `;
 
 export const Content = styled.div`
@@ -31,6 +31,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin:0 ;
 
   input {
     margin-right: 10px;
@@ -39,5 +40,6 @@ export const Content = styled.div`
 `;
 
 export const ExtraContent = styled.div`
+width: 300px;
 margin: 0 30px 0 30px;
 `;
