@@ -12,7 +12,7 @@ export const StyledLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 120px;
     font-size: 24px;
     color: #fff;
     text-decoration: none;
