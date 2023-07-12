@@ -58,29 +58,27 @@ export const Pagination = ({
     return (
         <>
             <Wrapper>
-                <button
+                <Button
                     onClick={handleBackQuestion}
                     disabled={currentQuestionIndex <= 0}
                 >
                     Back
-                </button>
-                <span>
+                </Button>
                     {currentQuestionIndex + 1}/{totalQuestions}
-                </span>
                 <Button
                     onClick={handleNextQuestion}
-                    disabled={
-                        isSendDisabled ||
-                        currentQuestionIndex === totalQuestions - 1
-                    }
+                    // disabled={
+                    //     isSendDisabled ||
+                    //     currentQuestionIndex === totalQuestions - 1
+                    // }
                 >
                     Next
                 </Button>
+            </Wrapper>
                 <div>
                     Correct Answers: {correctAnswersCount}/
                     {currentQuestionIndex + 1}
                 </div>
-            </Wrapper>
         </>
     );
 };
