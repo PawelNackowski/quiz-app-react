@@ -4,7 +4,8 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    max-width: 400px;
+    justify-content: center;
+    max-width: 300px;
   `
 
   export const List = styled.li`
