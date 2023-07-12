@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { questions } from '../questions';
 import { Pagination } from './Pagination';
 import { PageEnd } from '../PageEnd';
-import { Wrapper } from './styled';
+import { List, Wrapper } from './styled';
+import { Button } from './Pagination/styled';
 
 export const PageQuestions = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -39,41 +40,45 @@ export const PageQuestions = () => {
         id,
         title: currentQuestionTitle,
         answers,
-    } = questions[currentQuestionIndex];
+    } = questions[currentQuestionIndex]
 
     return (
         <>
-        <Wrapper>
             {!showResult ? (
                 <>
-                    <div key={id}>
-                        <h3>{currentQuestionTitle}</h3>
-                        <ul>
-                            {answers.map(({ id, name, value }) => (
-                                <li key={id}>
-                                    <label>
-                                        <input
-                                            type="radio"
-                                            name={`answer-${id}`}
-                                            value={value}
-                                            checked={selectedAnswer === value}
-                                            onChange={handleAnswerChange}
-                                        />
-                                        {name}
-                                    </label>
-                                </li>
-                            ))}
-                        </ul>
-                        <button
-                            onClick={handleSend}
-                            disabled={
-                                isSendDisabled ||
-                                currentQuestionIndex !== questions.length - 1
-                            }
-                        >
-                            Send
-                        </button>
-                    </div>
+                    <Wrapper>
+                        <div key={id}>
+                            <h3>{id}. {currentQuestionTitle}</h3>
+                            <ul>
+                                {answers.map(({ id, name, value }) => (
+                                    <List key={id}>
+                                        <label>
+                                            <input
+                                                type="radio"
+                                                name={`answer-${id}`}
+                                                value={value}
+                                                checked={
+                                                    selectedAnswer === value
+                                                }
+                                                onChange={handleAnswerChange}
+                                            />
+                                            {name}
+                                        </label>
+                                    </List>
+                                ))}
+                            </ul>
+                            <Button
+                                onClick={handleSend}
+                                disabled={
+                                    isSendDisabled ||
+                                    currentQuestionIndex !==
+                                        questions.length - 1
+                                }
+                            >
+                                Send
+                            </Button>
+                        </div>
+                    </Wrapper>
                     <Pagination
                         setCurrentQuestionIndex={setCurrentQuestionIndex}
                         setSelectedAnswer={setSelectedAnswer}
@@ -93,7 +98,6 @@ export const PageQuestions = () => {
                     />
                 </div>
             )}
-            </Wrapper>
         </>
     );
 };
