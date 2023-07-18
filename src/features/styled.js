@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Position = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10vh;
-`;
-
 export const StyledLink = styled(Link)`
     display: flex;
     justify-content: center;

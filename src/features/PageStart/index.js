@@ -5,7 +5,7 @@ import { Position, StyledLink } from '../styled';
 export const PageStart = () => {
     return (
       <>
-        <Position>
+
           <Tile
             title={'Quiz App'}
             extraContent={
@@ -26,7 +26,6 @@ export const PageStart = () => {
               </>
             }
           ></Tile>
-        </Position>
       </>
     );
 };
