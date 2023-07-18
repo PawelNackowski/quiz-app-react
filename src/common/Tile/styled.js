@@ -31,7 +31,6 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin:0 ;
 
   input {
     margin-right: 10px;
@@ -41,5 +40,4 @@ export const Content = styled.div`
 
 export const ExtraContent = styled.div`
 width: 300px;
-margin: 0 30px 0 30px;
 `;
