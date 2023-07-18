@@ -1,6 +1,6 @@
 import { Tile } from '../../common/Tile';
 import {click} from '../clickSounds';
-import { Position, StyledLink } from '../styled';
+import { StyledLink } from '../styled';
 
 export const PageStart = () => {
     return (
