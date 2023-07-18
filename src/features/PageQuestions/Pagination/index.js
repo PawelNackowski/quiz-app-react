@@ -9,7 +9,6 @@ export const Pagination = ({
     currentQuestionIndex,
     isSendDisabled,
     totalQuestions,
-    correctAnswersCount,
     handleSend,
 }) => {
     const navigate = useNavigate();
@@ -42,43 +41,20 @@ export const Pagination = ({
         }
     };
 
-    const handleBackQuestion = () => {
-        const previousQuestionIndex = currentQuestionIndex - 1;
-        setSelectedAnswer(null);
-
-        if (previousQuestionIndex >= 0) {
-            const previousQuestion = questions[previousQuestionIndex];
-            const previousUrl = `/question/${previousQuestion.id}`;
-            navigate(previousUrl);
-            setCurrentQuestionId(previousQuestion.id);
-            setCurrentQuestionIndex(previousQuestionIndex);
-        }
-    };
-
     return (
         <>
             <Wrapper>
-                <Button
-                    onClick={handleBackQuestion}
-                    disabled={currentQuestionIndex <= 0}
-                >
-                    Back
-                </Button>
                     {currentQuestionIndex + 1}/{totalQuestions}
                 <Button
                     onClick={handleNextQuestion}
-                    // disabled={
-                    //     isSendDisabled ||
-                    //     currentQuestionIndex === totalQuestions - 1
-                    // }
+                    disabled={
+                        isSendDisabled ||
+                        currentQuestionIndex === totalQuestions - 1
+                    }
                 >
                     Next
                 </Button>
             </Wrapper>
-                <div>
-                    Correct Answers: {correctAnswersCount}/
-                    {currentQuestionIndex + 1}
-                </div>
         </>
     );
 };
