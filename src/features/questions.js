@@ -155,7 +155,7 @@ export const questions = [
             },
             {
                 id: 4,
-                name: 'Ople',
+                name: 'Oploe',
                 value: 'Opole',
             },
         ],
@@ -172,8 +172,8 @@ export const questions = [
             },
             {
                 id: 2,
-                name: 'Wybó Karola Wojtyły na papieża',
-                value: 'Wybó Karola Wojtyły na papieża',
+                name: 'Wybór Karola Wojtyły na papieża',
+                value: 'Wybór Karola Wojtyły na papieża',
             },
             {
                 id: 3,
@@ -194,8 +194,8 @@ export const questions = [
         title: 'Jak nazywa się najwyższy szczyt w Polsce?',
         answers: [
             {
-                name: 'Śniezka',
-                value: 'Śniezka',
+                name: 'Śnieżka',
+                value: 'Śnieżka',
             },
             {
                 name: 'Rysy',
@@ -244,8 +244,8 @@ export const questions = [
                 value: 'W Częstochowie',
             },
             {
-                name: 'W Jasnej górze',
-                value: 'W Jasnej górze',
+                name: 'W Jasnej Górze',
+                value: 'W Jasnej Górze',
             },
             {
                 name: 'W Krakowie',
