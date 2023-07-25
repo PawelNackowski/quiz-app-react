@@ -4,7 +4,7 @@ import { PageQuestions } from './PageQuestions';
 export const Quiz = () => {
     return (
       <>
-        <Tile title={'Quiz App'} content={<PageQuestions />} />;
+        <Tile title={'Quiz o Polsce'} content={<PageQuestions />} />
       </>
     );
 };
