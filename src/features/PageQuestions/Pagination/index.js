@@ -42,19 +42,27 @@ export const Pagination = ({
     };
 
     return (
-        <>
-            <Wrapper>
-                    {currentQuestionIndex + 1}/{totalQuestions}
-                <Button
-                    onClick={handleNextQuestion}
-                    disabled={
-                        isSendDisabled ||
-                        currentQuestionIndex === totalQuestions - 1
-                    }
-                >
-                    Next
-                </Button>
-            </Wrapper>
-        </>
+      <>
+        <Wrapper>
+          {currentQuestionIndex + 1}/{totalQuestions}
+          <Button
+            onClick={handleNextQuestion}
+            disabled={
+              isSendDisabled || currentQuestionIndex === totalQuestions - 1
+            }
+          >
+            Next
+          </Button>
+          <Button
+            $send
+            onClick={handleSend}
+            disabled={
+              isSendDisabled || currentQuestionIndex !== questions.length - 1
+            }
+          >
+            Send
+          </Button>
+        </Wrapper>
+      </>
     );
 };

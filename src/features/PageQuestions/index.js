@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { questions } from '../questions';
 import { Pagination } from './Pagination';
 import { PageEnd } from '../PageEnd';
-import { List, Wrapper } from './styled';
-import { Button } from './Pagination/styled';
+import { List } from './styled';
 import { click } from '../clickSounds';
 
 export const PageQuestions = () => {
@@ -47,7 +46,6 @@ export const PageQuestions = () => {
       <>
         {!showResult ? (
           <>
-            <Wrapper>
               <div key={id}>
                 <h3>
                   {id}. {currentQuestionTitle}
@@ -69,7 +67,6 @@ export const PageQuestions = () => {
                   ))}
                 </ul>
               </div>
-            </Wrapper>
             <Pagination
               setCurrentQuestionIndex={setCurrentQuestionIndex}
               setSelectedAnswer={setSelectedAnswer}
@@ -80,14 +77,6 @@ export const PageQuestions = () => {
               handleSend={handleSend}
               currentQuestionId={id}
             />
-            <Button $send
-              onClick={handleSend}
-              disabled={
-                isSendDisabled || currentQuestionIndex !== questions.length - 1
-              }
-            >
-              Send
-            </Button>
           </>
         ) : (
           <div>
@@ -98,5 +87,5 @@ export const PageQuestions = () => {
           </div>
         )}
       </>
-    );
+    )
 };
