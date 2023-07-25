@@ -21,7 +21,6 @@ export const PageQuestions = () => {
 
     const handleSend = () => {
         const answerResult = checkAnswer(selectedAnswer);
-        console.log('Selected Answer:', answerResult);
 
         if (answerResult === 1) {
             setCorrectAnswersCount((prevCount) => prevCount + 1);
