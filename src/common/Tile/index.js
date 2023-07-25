@@ -1,11 +1,12 @@
-import { Content, ExtraContent, Header, Wrapper } from './styled';
+import { Content, Position, Header, Wrapper } from './styled';
 
-export const Tile = ({ title, content, extraContent }) => {
+export const Tile = ({ title, content }) => {
     return (
+      <Position>
         <Wrapper>
-            <Header>{title}</Header>
-            <ExtraContent>{extraContent}</ExtraContent>
-            <Content>{content}</Content>
+          <Header>{title}</Header>
+          <Content>{content}</Content>
         </Wrapper>
+      </Position>
     );
 };
