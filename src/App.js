@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Quiz } from './features';
 import { PageStart } from './features/PageStart';
-import { PageEnd } from './features/PageEnd';
 
 function App() {
     return (
