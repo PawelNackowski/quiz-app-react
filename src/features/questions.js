@@ -194,18 +194,22 @@ export const questions = [
         title: 'Jak nazywa się najwyższy szczyt w Polsce?',
         answers: [
             {
+                id: 1,
                 name: 'Śnieżka',
                 value: 'Śnieżka',
             },
             {
+                id: 2,
                 name: 'Rysy',
                 value: 'Rysy',
             },
             {
+                id: 3,
                 name: 'Giewont',
                 value: 'Giewont',
             },
             {
+                id: 4,
                 name: 'Kasprowy Wierch',
                 value: 'Kasprowy Wierch',
             },
