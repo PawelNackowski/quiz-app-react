@@ -16,7 +16,7 @@ export const Button = styled.button`
   border-radius: 50px;
   font-size: 18px;
   padding: 8px;
-  margin: 10px;
+  margin-left: 18px;
   width: 120px;
   transition: 0.3s;
 
@@ -35,5 +35,16 @@ export const Button = styled.button`
     display: ${(props) => (props.$send ? 'none' : 'flex')};
     border: 2px solid gray;
     background-color: gray;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    width: 100px;
+    padding: 6px;
+    font-size: 16px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMin}px) {
+    width: 80px;
+    padding: 4px;
+    font-size: 16px;
   }
 `;
