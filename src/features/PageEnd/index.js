@@ -4,9 +4,9 @@ import { Wrapper } from "./styled";
 export const PageEnd = ({ correctAnswersCount, currentQuestionIndex }) => {
     return (
       <Wrapper>
-        Correct answers:
+        Poprawne odpowiedzi:
         <div>
-          {correctAnswersCount} of {currentQuestionIndex + 1}
+          {correctAnswersCount} z {currentQuestionIndex + 1}
         </div>
         <StyledLink to="/start">Go to home</StyledLink>
       </Wrapper>
