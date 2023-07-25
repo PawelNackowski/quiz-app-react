@@ -221,18 +221,22 @@ export const questions = [
         title: 'Które z wymienionych miast jest stolicą Polski?',
         answers: [
             {
+                id: 1,
                 name: 'Kraków',
                 value: 'Kraków',
             },
             {
+                id: 2,
                 name: 'Warszawa',
                 value: 'Warszawa',
             },
             {
+                id: 3,
                 name: 'Gdańsk',
                 value: 'Gdańsk',
             },
             {
+                id: 4,
                 name: 'Wrocław',
                 value: 'Wrocław',
             },
@@ -244,18 +248,22 @@ export const questions = [
         title: 'Gdzie znajduje się Sanktuarium Maryjne w Polsce, które jest jednym z najważniejszych miejsc pielgrzymkowych w Europie?',
         answers: [
             {
+                id: 1,
                 name: 'W Częstochowie',
                 value: 'W Częstochowie',
             },
             {
+                id: 2,
                 name: 'W Jasnej Górze',
                 value: 'W Jasnej Górze',
             },
             {
+                id: 3,
                 name: 'W Krakowie',
                 value: 'W Krakowie',
             },
             {
+                id: 4,
                 name: 'W Warszawie',
                 value: 'W Warszawie',
             },
